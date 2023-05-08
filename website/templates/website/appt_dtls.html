@@ -1,0 +1,53 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+	<h1>Appointment Details</h1><br/><br/>
+
+	<div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+				<div class="card" style="width: 18rem;">
+					<div class="card-header">
+						<strong>CLIENT</strong><br/>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">First Name: {{ appt.client_name.first_name }}</li>
+						<li class="list-group-item">Last Name: {{ appt.client_name.last_name }}</li>
+						<li class="list-group-item">Preferred Name: {{ appt.client_name.disp_name }}</li>
+						<li class="list-group-item">Phone: {{ appt.client_name.c_phone }}</li>
+						<li class="list-group-item">Email: {{ appt.client_name.email }}</li>
+						<li class="list-group-item">Notes: {{ appt.client_name.notes }}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-6 mb-4">
+				<div class="card" style="width: 18rem;">
+					<div class="card-header">
+						<strong>THERAPIST</strong><br/>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Name: {{ appt.therapist_name.disp_name }}</li>
+						<li class="list-group-item">Phone: {{ appt.therapist_name.c_phone }}</li>
+						<li class="list-group-item">Email: {{ appt.therapist_name.email }}</li>
+					</ul>
+				</div><br>
+				<div class="card" style="width: 18rem;">
+					<div class="card-header">
+						<strong>Appointment Details</strong><br/>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Room: {{ appt.room }}</li>
+						<li class="list-group-item">Date: {{ appt.appt_date }}</li>
+					</ul>
+					<div class="card-footer">
+						<center>
+							<a href="#" class="btn btn-secondary">Reschedule</a>
+							<a href="#" class="btn btn-danger">Cancel Appt</a>
+						</center>				
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

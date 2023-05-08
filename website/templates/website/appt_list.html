@@ -1,0 +1,27 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+	<h1>Appointment Details</h1><br/><br/>
+	{% for appt in appt_list %}
+
+		<div class="card" style="width: 18rem;">
+			<div class="card-header">
+				<strong>{{ appt }}</strong><br/>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">DATE: {{ appt.appt_date }}</li>
+				<li class="list-group-item">Therapist: {{ appt.therapist_name }}</li>
+				<li class="list-group-item">Room: {{ appt.room }}</li>
+			</ul>
+			<div class="card-footer">
+				<center>
+					<a href="#" class="btn btn-secondary">Reschedule</a>
+					<a href="#" class="btn btn-danger">Cancel Appt</a>
+				</center>				
+			</div>
+		</div><br><br>	
+
+	{% endfor %}
+
+
+{% endblock %}
