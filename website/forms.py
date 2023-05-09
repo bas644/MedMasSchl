@@ -12,6 +12,8 @@ class ApptForm(ModelForm):
 
 		widgets = {
 			'client_name' : forms.Select(attrs={'class':'form-control', 'default':'Client Name'}),
-			'appt_date' : forms.DateTimeInput(attrs={'class':'form-control', 'placeholder':'Appointment Date:  YYYY:MM:DD HH:MM'}),
+			'appt_date' : forms.HiddenInput(),
+			'room' : forms.HiddenInput()
+
 		}
 
